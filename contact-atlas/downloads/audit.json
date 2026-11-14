@@ -1,0 +1,42 @@
+{
+  "downloaded_rows": 24224,
+  "downloaded_dates": [
+    "2024-03-20",
+    "2025-09-28"
+  ],
+  "duplicates": 0,
+  "missing_all_hits": {
+    "attack_angle": 1791,
+    "swing_path_tilt": 1792,
+    "plate_x": 0,
+    "plate_z": 0,
+    "sz_bot": 0,
+    "sz_top": 0
+  },
+  "in_zone_hits": 18986,
+  "missing_in_zone": {
+    "attack_angle": 1326,
+    "swing_path_tilt": 1326,
+    "intercept_ball_minus_batter_pos_y_inches": 1336
+  },
+  "complete_angles": 17660,
+  "batters": 705,
+  "by_year": {
+    "2024": 8475,
+    "2025": 9185
+  },
+  "by_side": {
+    "L": 8288,
+    "R": 9372
+  },
+  "ranges": {
+    "attack_angle": [
+      -82.27251924021974,
+      83.63305783674403
+    ],
+    "swing_path_tilt": [
+      5.828554170580899,
+      82.42264265786984
+    ]
+  }
+}

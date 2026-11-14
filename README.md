@@ -1,44 +1,51 @@
-# SwingLab — Fastball Contact Atlas
+# SwingLab — Approach, Impact & Contact
 
-An interactive 3D statistical view of pitch location, contact depth and attack angle, developed by Pat Burgess from questions raised while coaching hitters.
+An independent baseball analysis project by Pat Burgess, built from questions discussed during his time working in professional baseball: how do pitch location, the approach to the ball, and the instant of contact relate?
 
-## Explore the project
+[Open the live dashboard](https://swing-location-lab-pat.pburgess09.chatgpt.site)
 
-- [Contact Atlas source](contact-atlas/)
-- [Methods, definitions and findings](CONTACT-ATLAS.md)
-- [Graph data: summaries and sampled hits](contact-atlas/data/contact-map.json)
-- [Data builder](scripts/build_contact_map.py)
+## What the new analysis shows
 
-The blue-and-white atlas includes separate left/right-handed groups, 35 location cells per side, individual-hit samples, selectable depth and attack-angle colors, and high/middle/low pitch comparisons.
+On successful four-seam hits in the 2024–2025 regular seasons, hitters used a substantially flatter swing plane on higher pitches while retaining a modestly upward attack angle at contact. The approach plane and the direction at impact are different measurements.
 
-## Run locally
+| Within-hitter high-minus-low comparison | Difference | 95% confidence interval |
+|---|---:|---:|
+| Swing-path tilt | -9.64° (flatter) | -9.84° to -9.43° |
+| Attack angle at impact | +1.84° (more upward) | +1.38° to +2.29° |
 
-No JavaScript build or package installation is required. With Python installed, run from the repository root:
+The complete-angle cohort contains 17,660 hits from 705 hitters. The primary adjusted comparison uses 17,384 hits from 625 hitters with within-unit pitch-height variation and available controls. It accounts for horizontal location, pitch velocity, pitcher handedness and separate baselines for each hitter-season-batting-side group. Uncertainty is clustered by hitter.
+
+Attack angle changed less than swing-plane tilt; it was not identical. These are observational associations among successful hits. They do not establish optimal technique, the cause of an individual's movement, or the effectiveness of a “swing down” cue. Cue reports and unsuccessful attempts would be needed to evaluate coaching effects.
+
+![Within-hitter swing-plane and attack-angle contrasts](analysis/output/swing_plane_analysis.png)
+
+## Explore and reproduce
+
+- [Full analysis, definitions, quality checks and sensitivity results](analysis/README.md)
+- [Reproducible analysis script](analysis/analyze.py)
+- [Analysis input fields: 24,224 source records](analysis/raw/statcast_analysis_fields.csv.gz)
+- [Within-hitter estimates and confidence intervals](analysis/output/within_hitter_results.csv)
+- [Observed medians by pitch height and batting side](analysis/output/height_summaries.csv)
+- [Dashboard source](contact-atlas/)
+- [Original Contact Atlas methods](CONTACT-ATLAS.md)
 
 ```sh
+python -m pip install -r analysis/requirements.txt
+python analysis/analyze.py
+python scripts/build_swing_plane_dashboard.py
 python -m http.server 8000 --directory contact-atlas
 ```
 
-Open http://localhost:8000 in your browser. Serve the files over HTTP rather than opening index.html directly, so the graph can load its JSON data.
+Open http://localhost:8000. The dashboard is buildless HTML, CSS and JavaScript. Its new analysis includes all/right/left batting-side controls, equal-scale charts, exact tables, uncertainty, cohort notes and downloads. The original rotatable contact-depth atlas remains available below it.
 
-## What the data shows
+## Keep the two cohorts separate
 
-The included snapshot summarizes 17,963 eligible successful four-seam hits from imported 2024–2025 MLB Statcast records. All eligible observations contribute to summaries; the individual-hit display contains 1,400 sampled records per batting side.
+The original atlas contains 17,963 depth-eligible hits from an earlier imported 2024–2025 dataset. Its width/height coordinates are measured at the plate, while depth is relative to hitter center of mass. It is a statistical graph, not reconstructed contact coordinates or a barrel trajectory.
 
-Inside pitches show farther-forward median contact relative to hitter center of mass than outside pitches. Higher pitches show slightly more upward median attack angles in this pooled successful-hit cohort. These observations do not establish optimal technique or prove the effectiveness of an up/down mental cue.
+The new study uses fresh regular-season exports and requires both swing-path tilt and attack angle; contact depth is optional in the primary model. The different counts are intentional. See the notes for missingness and eligibility.
 
-Pitch width and normalized height are measured at the plate; contact depth is relative to hitter center of mass. This is a statistical graph, not a reconstructed physical swing or contact position over home plate. Attack angle is distinct from launch angle and swing-plane tilt.
+## Source
 
-## Data source and reproduction
+MLB Statcast / Baseball Savant: [CSV definitions](https://baseballsavant.mlb.com/csv-docs), [swing-path tilt](https://www.mlb.com/glossary/statcast/swing-path-tilt), [attack angle](https://www.mlb.com/glossary/statcast/attack-angle).
 
-Source: MLB Statcast / Baseball Savant. [Metric definitions](https://baseballsavant.mlb.com/csv-docs).
-
-This public repository includes the derived visualization snapshot, processing code and measurement notes. It does not include the full raw import. To regenerate, supply matching Statcast CSV gzip files under `data/raw/statcast/`, then run:
-
-```sh
-python scripts/build_contact_map.py
-cp data/visualization/contact-map.json contact-atlas/data/contact-map.json
-python scripts/verify-contact-map.py
-```
-
-Raw source data remains subject to its provider's terms; this repository does not claim ownership of MLB data. The visualization is independent and is not endorsed by MLB.
+Input files retain only fields used by this analysis; unused export columns were removed. Source records and derived results remain subject to provider terms. This independent project is not endorsed by MLB or the University of Miami.

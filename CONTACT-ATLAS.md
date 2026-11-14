@@ -1,5 +1,7 @@
 # Fastball Contact Atlas
 
+> **Project update:** This document describes the original depth-eligible atlas snapshot. The [new swing-plane study](analysis/README.md) uses fresh 2024–2025 regular-season exports and measures swing-path tilt separately from attack angle. It finds a flatter approach plane higher in the zone, alongside a smaller increase in attack angle at impact. Its cohort and eligibility rules differ from this original atlas.
+
 A rotatable three-dimensional statistical graph inspired by a ball-grid hitting-zone display. It does not reconstruct ball positions over home plate.
 
 ## Data contract

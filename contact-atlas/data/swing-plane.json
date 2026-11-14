@@ -1,0 +1,413 @@
+{
+  "title": "Swing plane and attack angle by pitch height",
+  "source": "MLB Statcast / Baseball Savant",
+  "seasons": [
+    2024,
+    2025
+  ],
+  "scope": "Regular-season successful four-seam hits, pitch centers in the defined strike zone, both angles available",
+  "audit": {
+    "downloaded_rows": 24224,
+    "downloaded_dates": [
+      "2024-03-20",
+      "2025-09-28"
+    ],
+    "duplicates": 0,
+    "missing_all_hits": {
+      "attack_angle": 1791,
+      "swing_path_tilt": 1792,
+      "plate_x": 0,
+      "plate_z": 0,
+      "sz_bot": 0,
+      "sz_top": 0
+    },
+    "in_zone_hits": 18986,
+    "missing_in_zone": {
+      "attack_angle": 1326,
+      "swing_path_tilt": 1326,
+      "intercept_ball_minus_batter_pos_y_inches": 1336
+    },
+    "complete_angles": 17660,
+    "batters": 705,
+    "by_year": {
+      "2024": 8475,
+      "2025": 9185
+    },
+    "by_side": {
+      "L": 8288,
+      "R": 9372
+    },
+    "ranges": {
+      "attack_angle": [
+        -82.27251924021974,
+        83.63305783674403
+      ],
+      "swing_path_tilt": [
+        5.828554170580899,
+        82.42264265786984
+      ]
+    }
+  },
+  "medians": [
+    {
+      "stand": "L",
+      "band": "Low",
+      "hits": 1729,
+      "hitters": 260,
+      "tilt_median": 37.768088893546334,
+      "tilt_mean": 37.80723212344535,
+      "attack_median": 7.132508029255559,
+      "attack_mean": 6.438033738808448
+    },
+    {
+      "stand": "L",
+      "band": "Middle",
+      "hits": 3814,
+      "hitters": 299,
+      "tilt_median": 33.221990044159256,
+      "tilt_mean": 33.35744803241953,
+      "attack_median": 7.617382900798781,
+      "attack_mean": 6.805494845159354
+    },
+    {
+      "stand": "L",
+      "band": "High",
+      "hits": 2745,
+      "hitters": 288,
+      "tilt_median": 27.92413373770201,
+      "tilt_mean": 28.082092401799393,
+      "attack_median": 7.919500443594468,
+      "attack_mean": 7.372340062595372
+    },
+    {
+      "stand": "R",
+      "band": "Low",
+      "hits": 1920,
+      "hitters": 352,
+      "tilt_median": 36.91012168284191,
+      "tilt_mean": 36.872249771437474,
+      "attack_median": 6.244519191299049,
+      "attack_mean": 5.804232325920305
+    },
+    {
+      "stand": "R",
+      "band": "Middle",
+      "hits": 4274,
+      "hitters": 409,
+      "tilt_median": 32.278685526852115,
+      "tilt_mean": 32.29610674058296,
+      "attack_median": 7.457670821720043,
+      "attack_mean": 6.8389655283326105
+    },
+    {
+      "stand": "R",
+      "band": "High",
+      "hits": 3178,
+      "hitters": 402,
+      "tilt_median": 26.873423147453554,
+      "tilt_mean": 26.82758670244086,
+      "attack_median": 8.588249194472308,
+      "attack_mean": 8.294777356288462
+    },
+    {
+      "stand": "All",
+      "band": "Low",
+      "hits": 3649,
+      "hitters": 574,
+      "tilt_median": 37.29641590384146,
+      "tilt_mean": 37.315271006466695,
+      "attack_median": 6.675755758853896,
+      "attack_mean": 6.104545464556534
+    },
+    {
+      "stand": "All",
+      "band": "Middle",
+      "hits": 8088,
+      "hitters": 657,
+      "tilt_median": 32.70236210204253,
+      "tilt_mean": 32.79659582157513,
+      "attack_median": 7.540140722102304,
+      "attack_mean": 6.823181998952936
+    },
+    {
+      "stand": "All",
+      "band": "High",
+      "hits": 5923,
+      "hitters": 637,
+      "tilt_median": 27.352788035767954,
+      "tilt_mean": 27.40898432944393,
+      "attack_median": 8.329236463887579,
+      "attack_mean": 7.867276027369412
+    }
+  ],
+  "contrasts": [
+    {
+      "side": "All",
+      "method": "fixed_effects",
+      "metric": "swing_path_tilt",
+      "estimate": -9.637656053893469,
+      "ci_low": -9.843359147208504,
+      "ci_high": -9.431952960578434,
+      "n": 17384,
+      "hitters": 625,
+      "units": 1087
+    },
+    {
+      "side": "All",
+      "method": "fixed_effects_depth_adjusted",
+      "metric": "swing_path_tilt",
+      "estimate": -9.778490800840252,
+      "ci_low": -9.988690480918969,
+      "ci_high": -9.568291120761536,
+      "n": 17373,
+      "hitters": 624,
+      "units": 1086
+    },
+    {
+      "side": "All",
+      "method": "paired_medians_min3",
+      "metric": "swing_path_tilt",
+      "estimate": -10.00827669908545,
+      "ci_low": -10.432249785891303,
+      "ci_high": -9.573337331674265,
+      "n": 235,
+      "hitters": 154,
+      "units": 235
+    },
+    {
+      "side": "All",
+      "method": "paired_medians_min5",
+      "metric": "swing_path_tilt",
+      "estimate": -10.284677174205832,
+      "ci_low": -11.133141000345205,
+      "ci_high": -9.382704575116815,
+      "n": 18,
+      "hitters": 18,
+      "units": 18
+    },
+    {
+      "side": "All",
+      "method": "fixed_effects",
+      "metric": "attack_angle",
+      "estimate": 1.8358946853619842,
+      "ci_low": 1.3805703805889369,
+      "ci_high": 2.2912189901350315,
+      "n": 17384,
+      "hitters": 625,
+      "units": 1087
+    },
+    {
+      "side": "All",
+      "method": "fixed_effects_depth_adjusted",
+      "metric": "attack_angle",
+      "estimate": 2.7540980079212964,
+      "ci_low": 2.4278946688893988,
+      "ci_high": 3.080301346953194,
+      "n": 17373,
+      "hitters": 624,
+      "units": 1086
+    },
+    {
+      "side": "All",
+      "method": "paired_medians_min3",
+      "metric": "attack_angle",
+      "estimate": 2.5034246287264836,
+      "ci_low": 1.5382528596781857,
+      "ci_high": 3.46429285371967,
+      "n": 235,
+      "hitters": 154,
+      "units": 235
+    },
+    {
+      "side": "All",
+      "method": "paired_medians_min5",
+      "metric": "attack_angle",
+      "estimate": 2.132652755348804,
+      "ci_low": -0.05075244090016107,
+      "ci_high": 4.272548372910366,
+      "n": 18,
+      "hitters": 18,
+      "units": 18
+    },
+    {
+      "side": "R",
+      "method": "fixed_effects",
+      "metric": "swing_path_tilt",
+      "estimate": -9.728716768481071,
+      "ci_low": -9.99895684110614,
+      "ci_high": -9.458476695856003,
+      "n": 9174,
+      "hitters": 382,
+      "units": 623
+    },
+    {
+      "side": "R",
+      "method": "fixed_effects_depth_adjusted",
+      "metric": "swing_path_tilt",
+      "estimate": -9.826269359659918,
+      "ci_low": -10.101192674438396,
+      "ci_high": -9.55134604488144,
+      "n": 9170,
+      "hitters": 382,
+      "units": 623
+    },
+    {
+      "side": "R",
+      "method": "paired_medians_min3",
+      "metric": "swing_path_tilt",
+      "estimate": -10.030172805411034,
+      "ci_low": -10.613653461129724,
+      "ci_high": -9.443910904174357,
+      "n": 102,
+      "hitters": 73,
+      "units": 102
+    },
+    {
+      "side": "R",
+      "method": "paired_medians_min5",
+      "metric": "swing_path_tilt",
+      "estimate": -10.047959017414241,
+      "ci_low": -11.341749194118831,
+      "ci_high": -8.720453649566952,
+      "n": 8,
+      "hitters": 8,
+      "units": 8
+    },
+    {
+      "side": "R",
+      "method": "fixed_effects",
+      "metric": "attack_angle",
+      "estimate": 2.564867990462194,
+      "ci_low": 1.982133589791606,
+      "ci_high": 3.147602391132782,
+      "n": 9174,
+      "hitters": 382,
+      "units": 623
+    },
+    {
+      "side": "R",
+      "method": "fixed_effects_depth_adjusted",
+      "metric": "attack_angle",
+      "estimate": 3.155644765079982,
+      "ci_low": 2.7342823448578337,
+      "ci_high": 3.5770071853021306,
+      "n": 9170,
+      "hitters": 382,
+      "units": 623
+    },
+    {
+      "side": "R",
+      "method": "paired_medians_min3",
+      "metric": "attack_angle",
+      "estimate": 3.731085199853848,
+      "ci_low": 2.5728875068206483,
+      "ci_high": 4.961228306455443,
+      "n": 102,
+      "hitters": 73,
+      "units": 102
+    },
+    {
+      "side": "R",
+      "method": "paired_medians_min5",
+      "metric": "attack_angle",
+      "estimate": 1.2671293417671667,
+      "ci_low": -2.4259035404899327,
+      "ci_high": 4.630711737597492,
+      "n": 8,
+      "hitters": 8,
+      "units": 8
+    },
+    {
+      "side": "L",
+      "method": "fixed_effects",
+      "metric": "swing_path_tilt",
+      "estimate": -9.547402114061866,
+      "ci_low": -9.857004619886867,
+      "ci_high": -9.237799608236864,
+      "n": 8210,
+      "hitters": 289,
+      "units": 464
+    },
+    {
+      "side": "L",
+      "method": "fixed_effects_depth_adjusted",
+      "metric": "swing_path_tilt",
+      "estimate": -9.73085815729484,
+      "ci_low": -10.04926294476159,
+      "ci_high": -9.41245336982809,
+      "n": 8203,
+      "hitters": 288,
+      "units": 463
+    },
+    {
+      "side": "L",
+      "method": "paired_medians_min3",
+      "metric": "swing_path_tilt",
+      "estimate": -9.988543171162389,
+      "ci_low": -10.619579941677388,
+      "ci_high": -9.368061393991761,
+      "n": 133,
+      "hitters": 81,
+      "units": 133
+    },
+    {
+      "side": "L",
+      "method": "paired_medians_min5",
+      "metric": "swing_path_tilt",
+      "estimate": -10.474051699639102,
+      "ci_low": -11.628094858247502,
+      "ci_high": -9.352487107643965,
+      "n": 10,
+      "hitters": 10,
+      "units": 10
+    },
+    {
+      "side": "L",
+      "method": "fixed_effects",
+      "metric": "attack_angle",
+      "estimate": 1.0692478973358819,
+      "ci_low": 0.3784695895160075,
+      "ci_high": 1.7600262051557563,
+      "n": 8210,
+      "hitters": 289,
+      "units": 464
+    },
+    {
+      "side": "L",
+      "method": "fixed_effects_depth_adjusted",
+      "metric": "attack_angle",
+      "estimate": 2.358951020866368,
+      "ci_low": 1.869686413953265,
+      "ci_high": 2.848215627779471,
+      "n": 8203,
+      "hitters": 288,
+      "units": 463
+    },
+    {
+      "side": "L",
+      "method": "paired_medians_min3",
+      "metric": "attack_angle",
+      "estimate": 1.39701448437713,
+      "ci_low": -0.048989628984589854,
+      "ci_high": 2.8517256342339414,
+      "n": 133,
+      "hitters": 81,
+      "units": 133
+    },
+    {
+      "side": "L",
+      "method": "paired_medians_min5",
+      "metric": "attack_angle",
+      "estimate": 2.825071486214113,
+      "ci_low": 0.40537727041878974,
+      "ci_high": 5.4131588386433505,
+      "n": 10,
+      "hitters": 10,
+      "units": 10
+    }
+  ],
+  "definitions": {
+    "swing_path_tilt": "Plane of the barrel path over the 40 ms before contact; lower is flatter.",
+    "attack_angle": "Vertical direction of the bat sweet spot at impact; positive is upward."
+  }
+}
