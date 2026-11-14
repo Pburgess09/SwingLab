@@ -1,8 +1,8 @@
 # SwingLab — Approach, Impact & Contact
 
-An independent baseball analysis project by Pat Burgess, built from questions discussed during his time working in professional baseball: how do pitch location, the approach to the ball, and the instant of contact relate?
+An exploratory baseball analysis of how pitch location relates to the barrel’s approach plane, its direction at impact, and contact depth. The working hypothesis is that pitch height is associated with a larger adjustment in swing-plane tilt than in attack angle.
 
-[Open the live dashboard](https://swing-location-lab-pat.pburgess09.chatgpt.site)
+[Open the live dashboard](https://swing-location-lab-pat.pburgess09.chatgpt.site) · [Project abstract](https://swing-location-lab-pat.pburgess09.chatgpt.site/abstract.html)
 
 ## What the new analysis shows
 
